@@ -32,7 +32,10 @@ $(document).ready(function(){
         return {
             name: obj.item,
             price: obj.price,
-            description: obj.description
+            description: obj.description,
+            vegan: obj.vegan,
+            spicy: obj.spicy,
+            favorite: obj.favorite
         };
     });
 
@@ -61,8 +64,45 @@ $(document).ready(function(){
     $("#gamesProducts").html(gamesHTML);
 
 
+    }); //this is where the first ajax ends
+
+    var news = 'https://json-data.herokuapp.com/restaurant/news/1';
+
+    $.ajax({
+        url: news,
+        method: 'get',
+        dataType: 'json'
+    }).then(function(newsItem) {
+
+        var newsPull = {'newsItem': newsItem};
+
+        var newsTemplate = $("#newsTemplate").text();
+
+        var newsHTML = Mustache.render(newsTemplate, newsPull);
+
+        $("#newsProducts").html(newsHTML);
+
     });
+
+    var special = "https://json-data.herokuapp.com/restaurant/special/1";
+
+    $.ajax({
+        url: special,
+        method: 'get',
+        dataType: 'json'
+    }).then(function(specialItem){
+        var specialPull = {
+            'specialItem': specialItem
+        };
+        var specialTemplate = $("#specialTemplate").text();
+        var specialHTML = Mustache.render(specialTemplate, specialPull);
+        $("#specialProducts").html(specialHTML);
+
+    });
+
 });
+
+
 
 
 

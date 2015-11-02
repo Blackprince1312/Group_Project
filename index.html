@@ -3,21 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>Group Project</title>
+
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+<div class = "header">
+  <img src="http://mahoneysatlantic.com/wp-content/uploads/Mahoneys_SD_181-e1390358534738-1000x400.jpg" >
+  <h1> Iron Pints </h1>
+ <ul>
+  <li class="brandico-twitter-bird"></li>
+  <li class="brandico-instagram"></li>
+  <li class="brandico-facebook"></li>
+  <li class="brandico-googleplus-rect"></li>
+</ul>
 
-<div id = "beerProducts"> </div>
 
-<div id = "entreeProducts"> </div>
-<div id = "gamesProducts"></div>
+</div>
 
-<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy6FEsprDyIARuQKsh8g7_B8&key=AIzaSyAFytpJMSTNookNXGWAGg8kSk7mDHSwKe8" allowfullscreen></iframe>
+<div class = "firstContainer">
+  <div id = "newsProducts"></div>
+
+  <iframe width="400" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy6FEsprDyIARuQKsh8g7_B8&key=AIzaSyAFytpJMSTNookNXGWAGg8kSk7mDHSwKe8" allowfullscreen></iframe>
+
+</div>
 
 
+  <div class="menuTabs">
 
+    <ul id="menu">
+
+      <li id = "beerProducts"> Beer Menu </li>
+
+      <li id = "entreeProducts"> Entree </li>
+
+      <li id = "gamesProducts"> Games </li>
+
+      <li id = "specialProducts"> Specials </li>
+
+    </ul>
+
+  </div>
+
+<script type="x-tmpl-mustache" id = "newsTemplate">
+  <div>
+    {{#newsItem}}
+      <h3> {{title}} </h3>
+      <p> {{post}} </p>
+    {{/newsItem}}
+  </div>
+</script>
 
 
 
@@ -28,9 +65,21 @@
     <div>
       <li>{{name}}</li>
         <li>{{style}}</li>
+        <li>{{description}}</li>
+        <li>ABV:{{content}}</li>
+            {{#bottle}}
+        <li>Bottled</li>
+            {{/bottle}}
+            {{#draught}}
+        <li>On Draft</li>
+            {{/draught}}
+            {{#allergies}}
+        <li>allergies</li>
+            {{/allergies}}
         <li>${{price}}</li>
-       <li>ABV:{{content}}</li>
-       <li>{{description}}</li>
+            {{#favorite}}
+        <li>Voted Best</li>
+            {{/favorite}}
     </div>
     {{/beerItem}}
   </ul>
@@ -44,9 +93,27 @@
       <li>{{name}}</li>
       <li>{{price}}</li>
       <li>{{description}}</li>
+          {{#spicy}}
+        <li>spicy icon</li>
+          {{/spicy}}
+          {{^spicy}}
+        <li>spice upon request</li>
+          {{/spicy}}
+          {{#vegan}}
+        <li>Voted Best</li>
+          {{/vegan}}
+          {{#favorite}}
+        <li>Voted Best</li>
+          {{/favorite}}
     </div>
     {{/entreeItem}}
     </ul>
+</script>
+
+<script type = "x-tmpl-mustache" id = "specialTemplate">
+{{#specialItem}}
+  <p>Special {{menu_item_id}}: Two Entrees, Two Beers & a Game for $25.</p>
+{{/specialItem}}
 </script>
 
 <script type = "x-tmpl-mustache" id = "gamesTemplate">
