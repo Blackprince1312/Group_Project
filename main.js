@@ -33,6 +33,7 @@ $(document).ready(function(){
             name: obj.item,
             price: obj.price,
             description: obj.description,
+            allergies: obj.allergies,
             vegan: obj.vegan,
             spicy: obj.spicy,
             favorite: obj.favorite
@@ -100,12 +101,17 @@ $(document).ready(function(){
 
     });
 
+    $(function () {
+   $("#menu div").show();
+   setTimeout("$('#menu div').slideToggle('fast');", 1);
+   $("#menu h3").click(function () {
+       $(this).next(".dropDown").slideToggle("fast").siblings(".dropDown:visible").slideUp("slow");
+       $(this).toggleClass("current");
+       $(this).siblings("h3").removeClass("current");
+   });
 });
 
 
-
-
-
-
+});
 
 
