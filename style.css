@@ -24,16 +24,15 @@
   text-decoration: none;
 }
 
-h1 {
-  font-family: 'Obritron', sans-serif, arial;
-}
+
 
 #logo {
-  height: 350px;
-  width: 500px;
+  height: 300px;
+  width: 400px;
   position: absolute;
-  bottom: 40em;
-  left: 35em;
+  bottom: em;
+  left: 25em;
+
 }
 
 #socialLinks{
@@ -52,14 +51,14 @@ h1 {
 }
 
 .blackBar1 ul {
-  margin-left: 26em;
+  margin-left: 22em;
 }
 
 
 .blackBar1 li {
   padding-top: .5em;
-  font-size: 30px;
-  margin-left: 180px;
+  font-size: 22px;
+  margin-left: 100px;
   float: left;
 }
 .blackBar1 a {
@@ -104,6 +103,7 @@ h1 {
 
 #container{
   background-image: url("http://zamnar.com/data/uploads/20/330934-grey-background.jpg");
+	width: 1400px;
 }
 
 .firstContainer {
@@ -155,7 +155,7 @@ h1 {
   overflow: auto;
   background-color: white;
   padding: 1em;
-  margin-left: 7em;
+  margin-left: 19em;
   background-color: rgba(227,227,227,0.63);
   box-shadow: 2px 2px 8px white;
   color: #121212;
@@ -171,7 +171,7 @@ h1 {
 }
 
 .header h1 {
-  font-size: 200px;
+  font-size: 100px;
   color: #FBF5D8;
   position: absolute;
   top: 175px;
